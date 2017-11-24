@@ -19,7 +19,7 @@ function NotifyUserConnect(numberOfConnections) {
 }
 
 function NotifyUserDisconnect(numberOfConnections) {
-  userConnectListener.forEach((callback) => {
+  userDisconnectListener.forEach((callback) => {
     if (typeof callback === 'function') {
       callback(numberOfConnections);
     }
@@ -57,7 +57,7 @@ export function DisconnectFromChatroom() {
 }
 
 export function SendMessage(user, message) {
-  socket.emit(events.SendMessage, )
+  socket.emit(events.SendMessage, user, message)
 }
 
 export function AddUserConnectListener(callback) {

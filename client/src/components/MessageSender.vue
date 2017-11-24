@@ -6,7 +6,7 @@
     </div>
     <div>
       <span>Message:</span>
-      <input ref="messageInput" v-model="message" v-on:keyup="InputKeyPressed"/>
+      <input ref="messageInput" v-model="message" v-on:keyup="InputKeyPressed" class="textInput"/>
     </div>
     <div>
       <input type="button" value="Send" v-on:click="ExecuteSend" />
@@ -69,6 +69,10 @@
 <style scoped>
   input.invalid {
     border-color: red;
+  }
+
+  .textInput {
+    width:100%
   }
 
 </style>
